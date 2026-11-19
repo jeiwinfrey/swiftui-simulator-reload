@@ -1,0 +1,28 @@
+{
+  "simulator": "iPhone 17 Pro Max",
+  "versions": {
+    "xcode": "Xcode 26.4.1 Build version 17E202",
+    "sweetpad": "sweetpad 0.1.27"
+  },
+  "rebuild": {
+    "samplesMs": [
+      2849,
+      2587,
+      2704,
+      2666,
+      2656
+    ],
+    "medianMs": 2666
+  },
+  "hotReload": {
+    "recompiler": "buildlog",
+    "samplesMs": [
+      578,
+      368,
+      552,
+      603,
+      366
+    ],
+    "medianMs": 552
+  }
+}
