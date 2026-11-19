@@ -1,0 +1,23 @@
+name: Validate
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  scripts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check command-line entry points
+        run: |
+          for script in scripts/*.mjs benchmarks/*.mjs; do node --check "$script"; done
+          node scripts/launch-app.mjs --help
+          node scripts/run.mjs --help
+          node benchmarks/run.mjs --help
