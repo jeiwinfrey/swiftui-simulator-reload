@@ -4,10 +4,10 @@
 
 Use one native iPhone Simulator with the app's existing Debug simulator artifact. An injector is a separate prerequisite for hot reload. The bundled launcher uses Node.js 20 or newer and the active Xcode toolchain. It boots or reuses one device, opens the app, and exits. Use the existing project command first when it supplies required scheme arguments, environment variables, or injector integration.
 
-From a local Codex installation, launch by installed bundle ID:
+From your iOS project's root after a project-level Skills CLI install, launch by installed bundle ID:
 
 ```sh
-node "${CODEX_HOME:-$HOME/.codex}/skills/swiftui-simulator-reload/scripts/launch-app.mjs" \
+node .agents/skills/swiftui-simulator-reload/scripts/launch-app.mjs \
   --bundle com.example.MyApp
 ```
 

@@ -4,14 +4,13 @@ A Codex skill for editing SwiftUI while your app runs in one native iPhone Simul
 
 ## Install the skill
 
-Clone the repository into your Codex skills directory:
+From your iOS project, install the skill for Codex with the [Skills CLI](https://github.com/vercel-labs/skills). The installer requires Node.js 22.20 or newer.
 
 ```sh
-git clone https://github.com/jeiwinfrey/swiftui-simulator-reload.git \
-  "${CODEX_HOME:-$HOME/.codex}/skills/swiftui-simulator-reload"
+npx skills add jeiwinfrey/swiftui-simulator-reload --agent codex
 ```
 
-If you already installed a local copy, use the repository as the updated skill source and keep any local edits you need. Open a Codex chat in your iOS project and ask:
+Add `-g` to install it for all your projects. Open a Codex chat in the iOS project and ask:
 
 > Use `$swiftui-simulator-reload` to run my Debug app in Simulator with hot reload. I'll interact with it myself.
 
@@ -19,7 +18,7 @@ If you already installed a local copy, use the repository as the updated skill s
 
 Use the project's existing injection setup if it has one. For a new terminal-driven setup, [SweetPad CLI](https://sweetpad.hyzyla.dev/docs/cli/hot-reload/) can build the Debug app, launch it on the selected simulator, and inject supported Swift edits on save. SwiftUI needs refresh hooks such as those provided by [Inject](https://github.com/krzysztofzablocki/Inject). [Whole-app setup and verification](references/whole-app.md)
 
-The bundled launcher uses Node.js 20 or newer and the active Xcode toolchain. It opens Simulator and exits. A configured injector handles subsequent hot reloads.
+The bundled launcher uses Node.js 20 or newer and the active Xcode toolchain. It opens Simulator and exits. A configured injector handles subsequent hot reloads. To run it directly from a checkout of this repository:
 
 ```sh
 node scripts/launch-app.mjs --bundle com.example.MyApp

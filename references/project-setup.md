@@ -37,12 +37,13 @@ The launcher copies each item in `resources` into the preview bundle using its b
 
 ## Run and troubleshoot
 
-From the app project root, run:
+From the app project root after a project-level Skills CLI install, run:
 
 ```sh
-node "${CODEX_HOME:-$HOME/.codex}/skills/swiftui-simulator-reload/scripts/run.mjs" "$PWD"
+node .agents/skills/swiftui-simulator-reload/scripts/run.mjs "$PWD"
 ```
 
+- For a skill installed elsewhere, locate `scripts/run.mjs` relative to the skill's `SKILL.md` and pass the app's project directory.
 - Add `--device <UDID>` when more than one iPhone is booted. Run one watcher for that project on the selected simulator.
 - `Ready on…` means the initial view mounted. A successful save produces `Hot reload mounted`. The last successful view remains in place if compilation fails. Fix the compiler error and save again.
 - Keep the preview foregrounded in Simulator while editing. If the launcher reports a mount timeout, switch to the preview app and save again.
