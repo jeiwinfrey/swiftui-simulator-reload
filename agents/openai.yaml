@@ -1,0 +1,3 @@
+interface:
+  display_name: "SwiftUI Simulator Reload"
+  short_description: "Run an iOS app in Simulator with SwiftUI hot reload"
